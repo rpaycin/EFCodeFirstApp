@@ -12,8 +12,7 @@ namespace EFCodeFirstApp.Models.Data.Models
         public string Name { get; set; }
 
         public bool IsLogin { get; set; }
-
-
+        
         //Kullandığın classa ID li bir property oluşturmazsan SQL de kendisi otomatik alan açar. 
         //Burda RoleID eklemeseydim Role ile ilgili başka bir alan açılacaktı
         public int RoleID { get; set; }
