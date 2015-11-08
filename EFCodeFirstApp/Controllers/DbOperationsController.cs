@@ -19,22 +19,26 @@ namespace EFCodeFirstApp.Controllers
         
         public ActionResult UserList()
         {
-            //AddUser(new User
-            //{
-            //    Name = "test user",
-            //    IsLogin = true,
-            //    RoleID=1
-            //});
-
             var users = _context.Users.OrderByDescending(u => u.Name).ToList();
 
             return View(users);
         }
 
-        public void AddUser(User user)
+        public ActionResult AddUser()
         {
-            _context.Users.Add(user);
-            _context.SaveChanges();
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddUser(User user)
+        {
+            if (ModelState.IsValid)
+            {
+                user.RoleID = 1;
+                _context.Users.Add(user);
+                _context.SaveChanges();
+            }
+            return View();
         }
     }
 }
