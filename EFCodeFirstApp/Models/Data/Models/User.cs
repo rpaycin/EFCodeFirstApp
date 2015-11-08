@@ -19,6 +19,6 @@ namespace EFCodeFirstApp.Models.Data.Models
         public int RoleID { get; set; }
 
         //başka bir classı kullanacaksan virtual eklenmeli
-        public virtual Role Rolee { get; set; }
+        public virtual Role Role { get; set; }
     }
 }
